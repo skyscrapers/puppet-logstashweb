@@ -35,8 +35,12 @@ server {
 	ssl_protocols  TLSv1 TLSv1.1 TLSv1.2;
 
   #Disables all weak ciphers
-  ssl_ciphers ALL:!aNULL:!ADH:!eNULL:!LOW:!EXP:RC4+RSA:+HIGH:+MEDIUM;
-  ssl_prefer_server_ciphers   on;
+  ssl_prefer_server_ciphers on;
+  ssl_ciphers AES256+EECDH:AES256+EDH:!aNULL;
+<% end %>
+
+<% if @dhparam_file %>
+  ssl_dhparam <%= @nginx_passwd_file %>;
 <% end %>
 
   location / {

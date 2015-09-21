@@ -66,6 +66,7 @@ class logstashweb(
   $nginx_ssl                  = $logstashweb::params::nginx_ssl,
   $nginx_ssl_certificate      = false,
   $nginx_ssl_certificate_key  = false,
+  $dhparam_file               = undef,
 
 ) inherits logstashweb::params {
 
