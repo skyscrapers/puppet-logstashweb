@@ -40,7 +40,7 @@ server {
 <% end %>
 
 <% if @dhparam_file %>
-  ssl_dhparam <%= @nginx_passwd_file %>;
+  ssl_dhparam <%= @dhparam_file %>;
 <% end %>
 
   location / {
